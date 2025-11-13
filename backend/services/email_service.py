@@ -10,7 +10,7 @@ class EmailService:
         self.scopes = ["User.Read", "Mail.Read", "Mail.ReadWrite"]
         self.access_token = get_access_token(self.application_id, self.client_secret, self.scopes)
 
-        # track processed attachment IDs
+
         self.processed_attachments = set()
 
     def fetch_emails(self, top=5):

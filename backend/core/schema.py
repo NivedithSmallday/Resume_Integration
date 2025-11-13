@@ -1,3 +1,5 @@
+
+# all database creation
 DB_SCHEMA = """
 CREATE TABLE IF NOT EXISTS resumes (
     id INT AUTO_INCREMENT PRIMARY KEY,
