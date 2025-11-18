@@ -1,9 +1,11 @@
 import os
 import webbrowser
+from os import access
+
 import msal
 
 MS_GRAPH_BASE_URL = "https://graph.microsoft.com/v1.0"
-
+# to get the access tocken
 def get_access_token(application_id, client_secret, scopes):
     client = msal.ConfidentialClientApplication(
         client_id=application_id,
