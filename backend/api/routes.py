@@ -11,6 +11,7 @@ from fastapi.responses import FileResponse
 router = APIRouter()
 db = ResumeDB()
 subscribers: List[asyncio.Queue] = []
+host="http://localhost:5000/"
 
 async def event_generator():
     queue: asyncio.Queue[str] = asyncio.Queue()
@@ -56,7 +57,7 @@ def get_resumes(search: Optional[str] = Query(None)) -> List[Dict[str, Any]]:
                 resume_file = row.get("resume_file")  # If you store file path in DB
                 if resume_file:
                     file = row["resume_file"]
-                    resume_url = resume_url = f"http://localhost:5000/resume/{file}"
+                    resume_url = resume_url = f"{host}/resume/{file}"
                 else:
                     resume_url = None
                 print(f"Resume URL: {resume_url}")

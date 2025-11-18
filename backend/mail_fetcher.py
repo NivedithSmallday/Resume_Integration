@@ -15,7 +15,7 @@ def fetch_emails(access_token, top=5):
     response = httpx.get(endpoint, headers=headers, params=params)
     response.raise_for_status()
     return response.json().get('value', [])
-
+# to download_attachments from the email
 def download_attachments(message_id, access_token):
     attach_url = f"{MS_GRAPH_BASE_URL}/me/messages/{message_id}/attachments"
     headers = {'Authorization': f'Bearer {access_token}'}
