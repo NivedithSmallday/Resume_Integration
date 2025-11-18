@@ -1,8 +1,7 @@
 from pathlib import Path
 
+"""Handles loading of resume text files."""
 class ResumeLoader:
-    """Handles loading of resume text files."""
-
     @staticmethod
     def load_text(file_path: str) -> str:
         path = Path(file_path)
