@@ -1,5 +1,5 @@
 from langchain.prompts import PromptTemplate
-
+# prompt tempalate
 resume_prompt = PromptTemplate(
     input_variables=["resume_text"],
     template="""
